@@ -1,0 +1,151 @@
+/*定义变量*/
+$baseFontSize:75px;
+
+@function pxToRem($px) {
+    @return $px / $baseFontSize * 1rem;
+}
+/*reset-css*/
+body{
+    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+    -webkit-text-size-adjust: 100% !important;
+}
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{
+    margin:0;
+} 
+ol,ul{
+    margin:0; 
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+a,
+button,
+input {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+input {
+    -webkit-appearance: none;
+}
+
+/*全局基础样式 */
+button{
+    border: none;
+    background: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    color: #333333;
+    box-sizing: border-box;
+}
+button:focus{
+    outline: none;
+}
+/*按钮100%宽度*/
+.btn_global{
+    width: 100%;
+    height: pxToRem(112px);
+    font-size: pxToRem(32px); 
+    font-weight: bold; 
+    color: #ffffff;
+}
+/*大按钮*/
+.btn_large{
+    position: relative;
+    width: pxToRem(590px);
+    height: pxToRem(96px);
+    border-radius: pxToRem(10px);
+    font-size: pxToRem(32px);
+    font-weight: bold;
+    color: #ffffff;
+}
+/*normal按钮*/
+.btn_normal{
+    position: relative;
+    padding: 0 pxToRem(70px);
+    height: pxToRem(88px);
+    border-radius: pxToRem(100px);
+    font-size: pxToRem(28px);
+}
+/*small按钮*/
+.btn_small{
+    position: relative;
+    padding: 0 pxToRem(20px);
+    height: pxToRem(66px);
+    border-radius: pxToRem(100px);
+    font-size: pxToRem(26px);
+}
+.btn_global_normal,.btn_global_loading,.btn_large_normal{
+    background-image: linear-gradient(90deg, #89CF2E 0%, #32AF50 100%);
+}
+.btn_global_normal:active,.btn_large_normal:active{
+    background-image: linear-gradient(-90deg, #89CF2E 0%, #32AF50 100%);
+}
+.btn_global_disable,.btn_large_disable{
+    background-image: linear-gradient(45deg, rgba(113,199,55,0.4) 0%, rgba(50,175,80,0.4) 100%);
+}
+/*幽灵按钮*/
+.btn_ghost_normal{
+    color: #333333;
+    background: #ffffff;
+    font-weight: normal;
+}
+.btn_ghost_normal:active{
+    background: #F5F5F5; 
+}
+.btn_ghost_disable{
+    background: #FAFAFA;
+    color: #C4C4C4;
+    font-weight: normal; 
+}
+.btn_large.btn_ghost_normal::after,.btn_large.btn_ghost_disable::after,.btn_normal.btn_ghost_normal::after,.btn_normal.btn_ghost_disable::after,.btn_small.btn_ghost_normal::after,.btn_small.btn_ghost_disable::after{
+    content:" ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #C4C4C4;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: pxToRem(20px);
+}
+.btn_normal.btn_ghost_normal::after,.btn_normal.btn_ghost_disable::after{
+    border-radius: pxToRem(200px);
+    border: 2px solid #C4C4C4;
+}
+.btn_small.btn_ghost_normal::after,.btn_small.btn_ghost_disable::after{
+    border-radius: pxToRem(200px);
+    border: 2px solid #C4C4C4;
+}
+/*loading*/
+.weiche_loading{
+    margin-right: pxToRem(26px);
+    width: pxToRem(48px);
+    height: pxToRem(48px);
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-animation: weicheLoading 1s steps(8, end) infinite;
+    animation: weicheLoading 1s steps(8, end) infinite;
+    background: transparent url(http://fs1.weicheche.cn/wecar_weixin/wechat_public/loading_white.png) no-repeat;
+    background-size: pxToRem(48px) pxToRem(48px);
+}
+@-webkit-keyframes weicheLoading {
+    0% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+@keyframes weicheLoading {
+    0% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}

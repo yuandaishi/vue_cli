@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <router-link to='/mess_son'>访问子路由</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

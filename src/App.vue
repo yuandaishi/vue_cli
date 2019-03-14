@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <p>{{store.state.name}}</p>
-    <router-link to='HelloWorld'><p>go to hello world</p></router-link>
-    <router-link to="message"><p>go to hello message</p></router-link>
-    <router-view/>
+    <p>{{$store.state.name}}</p>
+    <router-view class="one" name="left"/>
+    <router-view class="two" name="right"/>
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   name: 'App',
   data () {
     return {
-      store: this.$store
+    //   store: this.$store
     }
   }
 }
