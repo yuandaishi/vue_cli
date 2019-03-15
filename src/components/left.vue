@@ -3,6 +3,8 @@
         <div class="left">
             {{desc}}
         </div>
+        <!-- <router-link to="message"><p>go to hello message</p></router-link> -->
+        <router-view></router-view>
     </div>
 </template>
 <script>

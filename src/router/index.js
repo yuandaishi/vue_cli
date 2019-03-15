@@ -9,6 +9,7 @@ import right from '@/components/right'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
         path:'/',
@@ -19,6 +20,7 @@ export default new Router({
         children:[
             {
                 path: '/message',
+                redirect:'/mess_son',
                 name: 'messagexxxx',
                 component:message,
                 children: [
